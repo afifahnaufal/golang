@@ -21,7 +21,7 @@ func main() {
 	// route baru
 	app.Get("/hello/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
-		return c.SendString("Hello, " + name + "!")
+		return c.SendString("👋 Halo " + name + "! Semoga harimu menyenangkan!")
 	})
 	// respon JSON
 	app.Get("/data", func(c *fiber.Ctx) error {
