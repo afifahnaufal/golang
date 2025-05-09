@@ -16,5 +16,11 @@ func main() {
 		return c.SendString("Ini halaman about!")
 	})
 
+	// Tambahan untuk commit ke-3
+	app.Get("/hello/:name", func(c *fiber.Ctx) error {
+		name := c.Params("name")
+		return c.SendString("Hello, " + name + "!")
+	})
+
 	app.Listen(":3000")
 }
