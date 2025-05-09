@@ -6,6 +6,8 @@ import (
 
 func main() {
 	app := fiber.New()
+	
+	app.Use(logger.New())
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World! Selamat datang di halaman ini!! Ini halaman tutorial")
