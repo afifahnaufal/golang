@@ -6,7 +6,8 @@ func main() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!" "selamat datang di halaman ini!!" )
+		return c.SendString("Hello, World!" "selamat datang di halaman ini!!" 
+		"ini halaman tutorial" )
 		
 	})
 
