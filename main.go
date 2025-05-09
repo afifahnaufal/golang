@@ -16,11 +16,18 @@ func main() {
 		return c.SendString("Ini halaman about!")
 	})
 
-	// Tambahan untuk commit ke-3
+	// route baru
 	app.Get("/hello/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
 		return c.SendString("Hello, " + name + "!")
 	})
+	// respon JSON
+    app.Get("/data", func(c *fiber.Ctx) error {
+        return c.JSON(fiber.Map{
+            "status":  "success",
+            "message": "Ini response JSON",
+        })
+    })
 
 	app.Listen(":3000")
 }
