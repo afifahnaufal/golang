@@ -4,7 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm/logger"
 )
-
+// Route utama (home)
 func main() {
 	app := fiber.New()
 
@@ -14,16 +14,16 @@ func main() {
 		return c.SendString("👋 Hello, World! Selamat datang di halaman ini!! Ini halaman tutorial 😊")
 	})
 
-	// Tambahan untuk commit ke-2
+	// Route about
 	app.Get("/about", func(c *fiber.Ctx) error {
 		return c.SendString("ℹ️ Terima kasih sudah mengunjungi halaman ini.")
 	})
-	// route baru
+	// Route dengan parameter
 	app.Get("/hello/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
 		return c.SendString("👋 Halo " + name + "! Semoga harimu menyenangkan!")
 	})
-	// respon JSON
+	// Route JSON response
 	app.Get("/data", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"status":  "success",
