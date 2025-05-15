@@ -20,7 +20,7 @@ func main() {
 
 	// Route about (hindari duplikasi)
 	app.Get("/about", func(c *fiber.Ctx) error {
-		return c.SendString("ℹ️ thankyou! for comming at this page.")
+		return c.SendString("ℹ️ thankyou! for coming at this page.")
 	})
 
 	// Route dengan parameter
