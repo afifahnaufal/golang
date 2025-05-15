@@ -3,22 +3,24 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
 func main() {
 	app := fiber.New()
 
-	// Middleware logger dari Fiber
+	// Middleware logging dan recover
 	app.Use(logger.New())
+	app.Use(recover.New())
 
 	// Route utama (home)
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("👋 Hello, World! Selamat datang di halaman ini!! Ini halaman tutorial 😊")
 	})
 
-	// Route about (cukup satu)
+	// Route about (hindari duplikasi)
 	app.Get("/about", func(c *fiber.Ctx) error {
-		return c.SendString("ℹ️ Ini halaman about! Terima kasih sudah mengunjungi.")
+		return c.SendString("ℹ️ Terima kasih sudah mengunjungi halaman ini.")
 	})
 
 	// Route dengan parameter
