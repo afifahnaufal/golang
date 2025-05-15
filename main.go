@@ -35,5 +35,10 @@ func main() {
 		})
 	})
 
+	// Route contact
+	app.Get("/contact", func(c *fiber.Ctx) error {
+    return c.SendString("📞 Hubungi kami di: 123-456-7890 atau email: contoh@email.com")
+	})
+
 	app.Listen(":3000")
 }
