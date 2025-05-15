@@ -16,6 +16,10 @@ func main() {
 
 	// Route about
 	app.Get("/about", func(c *fiber.Ctx) error {
+    return c.SendString("ℹ️ Ini halaman about! Terima kasih sudah mengunjungi.")
+	})
+	
+	app.Get("/about", func(c *fiber.Ctx) error {
 		return c.SendString("ℹ️ Terima kasih sudah mengunjungi halaman ini.")
 	})
 	// Route dengan parameter
