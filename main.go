@@ -26,7 +26,7 @@ func main() {
 	// Route dengan parameter
 	app.Get("/hello/:name", func(c *fiber.Ctx) error {
 		name := c.Params("name")
-		return c.SendString("👋 Halo " + name + "! Semoga harimu menyenangkan!")
+		return c.SendString("👋 Hello " + name + "! Semoga harimu menyenangkan!")
 	})
 
 	// Route JSON response
