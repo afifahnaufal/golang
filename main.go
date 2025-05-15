@@ -16,7 +16,7 @@ func main() {
 
 	// Tambahan untuk commit ke-2
 	app.Get("/about", func(c *fiber.Ctx) error {
-		return c.SendString("ℹ️ Terima kasih sudah mengunjungi.")
+		return c.SendString("ℹ️ Terima kasih sudah mengunjungi halaman ini.")
 	})
 	// route baru
 	app.Get("/hello/:name", func(c *fiber.Ctx) error {
