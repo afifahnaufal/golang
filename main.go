@@ -1,14 +1,16 @@
 package main
 
 import (
-    "github.com/gofiber/fiber/v2"
-    "gofiber/routes" // gunakan nama module kamu (lihat di go.mod)
+	"gofiber/routes" // ini harus sesuai module name di go.mod
+
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-    app := fiber.New()
+	app := fiber.New()
 
-    routes.SetupRoutes(app) // memuat semua route dari folder routes
+	// panggil semua route dari file index.go
+	routes.IndexRoute(app)
 
-    app.Listen(":3000")
+	app.Listen(":3000")
 }
