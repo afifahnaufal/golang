@@ -45,7 +45,7 @@ func IndexRoute(app *fiber.App) {
 			return c.Status(fiber.StatusBadRequest).SendString("Data tidak valid")
 		}
 
-		return c.SendString("Halo, " + req.Nama + "! Terima kasih sudah submit!")
+		return c.SendString("Hello, " + req.Nama + "! Terima kasih sudah submit!")
 	})
 
 	// Route dengan query parameter
