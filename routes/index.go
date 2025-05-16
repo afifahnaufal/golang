@@ -6,9 +6,12 @@ import (
 
 // IndexRoute mengatur semua routing aplikasi
 func IndexRoute(app *fiber.App) {
-	// Route default
+	// Route default HTML render
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Selamat datang di homepage!")
+		return c.Render("index", fiber.Map{
+			"Title": "Homepage",
+			"Name":  "Afifah Naufal",
+		})
 	})
 
 	// Route about
