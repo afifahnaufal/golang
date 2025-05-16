@@ -1,15 +1,16 @@
 package main
 
 import (
-	"gofiber/routes" // ini harus sesuai module name di go.mod
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	"gofiber/routes"
 )
 
 func main() {
 	app := fiber.New()
 
-	// panggil semua route dari file index.go
+	app.Use(logger.New()) // middleware logger
+
 	routes.IndexRoute(app)
 
 	app.Listen(":3000")
