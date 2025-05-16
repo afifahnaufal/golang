@@ -1,17 +1,24 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/logger"
 	"gofiber/routes"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html"
 )
 
 func main() {
-	app := fiber.New()
+	// Inisialisasi template engine
+	engine := html.New("./views", ".html")
 
-	app.Use(logger.New()) // middleware logger
+	// Buat instance Fiber dan hubungkan dengan engine
+	app := fiber.New(fiber.Config{
+		Views: engine,
+	})
 
+	// Panggil semua routing dari routes
 	routes.IndexRoute(app)
 
+	// Jalankan server
 	app.Listen(":3000")
 }
