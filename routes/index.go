@@ -1,15 +1,18 @@
 package routes
 
-import (
-    "github.com/gofiber/fiber/v2"
-)
+import "github.com/gofiber/fiber/v2"
 
-func SetupRoutes(app *fiber.App) {
-    app.Get("/", func(c *fiber.Ctx) error {
-        return c.SendString("Selamat datang di halaman utama 😄")
-    })
+func IndexRoute(app *fiber.App) {
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Selamat datang di homepage!")
+	})
 
-    app.Get("/about", func(c *fiber.Ctx) error {
-        return c.SendString("Ini halaman tentang (about) 😎")
-    })
+	app.Get("/about", func(c *fiber.Ctx) error {
+		return c.SendString("📄 Terima kasih sudah mengunjungi halaman ini.")
+	})
+
+	app.Get("/hello/:name", func(c *fiber.Ctx) error {
+		name := c.Params("name")
+		return c.SendString("👋 Hello " + name + "! Semoga harimu menyenangkan!")
+	})
 }
