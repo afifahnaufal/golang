@@ -1,24 +1,25 @@
 package main
 
 import (
-	"gofiber/routes"
-
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/template/html"
+	"github.com/gofiber/template/html/v2"
+	"gofiber/routes" // Pastikan nama modul di go.mod adalah "gofiber"
 )
 
 func main() {
-	// Inisialisasi template engine
+	// Inisialisasi template engine (folder views, ekstensi .html)
 	engine := html.New("./views", ".html")
 
-	// Buat instance Fiber dan hubungkan dengan engine
+	// Buat app Fiber dengan konfigurasi engine
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
 
-	// Panggil semua routing dari routes
+	// Routing
 	routes.IndexRoute(app)
 
-	// Jalankan server
-	app.Listen(":3000")
+	// Jalankan server di port 3000
+	if err := app.Listen(":3000"); err != nil {
+		panic(err)
+	}
 }
