@@ -30,7 +30,7 @@ func IndexRoute(app *fiber.App) {
 		return c.JSON(fiber.Map{
 			"nama":    "Afifah Naufal",
 			"jurusan": "D4 Teknik Informatika",
-			"hobi":    []string{"futsal", "menyanyi"},
+			"hobi":    []string{"makan dimsum", "menyanyi"},
 		})
 	})
 
