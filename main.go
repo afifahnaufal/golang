@@ -15,7 +15,7 @@ func main() {
 		Views: engine,
 	})
 
-	// Routing test
+	// Routing
 	routes.IndexRoute(app)
 
 	// Jalankan server di port 3000
