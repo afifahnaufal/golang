@@ -42,7 +42,7 @@ func IndexRoute(app *fiber.App) {
 
 		var req Request
 		if err := c.BodyParser(&req); err != nil {
-			return c.Status(fiber.StatusBadRequest).SendString("Data tidak valid")
+			return c.Status(fiber.StatusBadRequest).SendString("Ups Data tidak valid")
 		}
 
 		return c.SendString("Hello, " + req.Nama + "! Terima kasih sudah submit!")
