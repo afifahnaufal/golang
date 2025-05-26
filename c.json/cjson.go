@@ -19,7 +19,7 @@ type User struct {
 func getUser() User {
     return User{
         ID:          1,
-        Name:        "Afifah Naufal Rahma",
+        Name:        "Afifah Naufal Rahm",
         Email:       "afifah@example.com",
         Status:      "Mahasiswa",
         Universitas: "Logistik dan Bisnis International",
