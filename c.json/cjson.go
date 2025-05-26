@@ -14,7 +14,7 @@ type User struct {
 func getUser(c *gin.Context) {
     user := User{
         ID:    1,
-        Name:  "Afifah naufal",
+        Name:  "Afifah",
         Email: "afifah@example.com",
     }
     c.JSON(http.StatusOK, user)
