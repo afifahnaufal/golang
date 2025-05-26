@@ -23,7 +23,7 @@ func getUser() User {
         Email:       "afifah@example.com",
         Status:      "Mahasiswa",
         Universitas: "Logistik dan Bisnis International",
-        Jurusan:     " Teknik Informatika",
+        Jurusan:     " D4 Teknik Informatika",
     }
 }
 
