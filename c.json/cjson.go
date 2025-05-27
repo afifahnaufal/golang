@@ -19,18 +19,18 @@ type User struct {
 func getUser() User {
     return User{
         ID:          1,
-        Name:        "Afifah Naufal Rahmani ",
+        Name:        "Afifah Naufal Rahmani",
         Email:       "afifah@example.com",
         Status:      "Mahasiswa",
-        Universitas: "Logistik dan Bisnis International",
-        Jurusan:     " D4 Teknik Informatika",
+        Universitas: "Logistik dan Bisnis Internasional",
+        Jurusan:     "D4 Teknik Informatika",
     }
 }
 
 func main() {
     r := gin.Default()
 
-    // Route GET /user mengembalikan JSON
+    // Endpoint GET /user (huruf kecil, sesuai standar REST)
     r.GET("/user", func(c *gin.Context) {
         user := getUser()
         c.JSON(http.StatusOK, gin.H{
@@ -39,5 +39,6 @@ func main() {
         })
     })
 
-    r.Run() // listen di localhost:8080
+    // Jalankan server di localhost:8080
+    r.Run() // default :8080
 }
